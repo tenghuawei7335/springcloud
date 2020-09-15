@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: EurekaServerThw
+
+server:
+  port: 9888 #EurekaServer注册中心运行端口，当前Eureka目前是单机，非集群
+  context-path: /
+
+eureka:
+  client:
+    #在默认下，Eureka服务注册中心也会将自己作为客户端来尝试注册，所以我们要禁用它的客户端注册行为
+    #服务注册开关，是否将自己注册到EurekaServer服务中，因为本身就为注册中心不需要自己注册自己(EurekaServer集群时候则为true)
+    register-with-eureka: false #默认true
+    fetch-registry: false #服务发现开关,是否从注册中心获取注册表信息,默认true
+    service-url: #EurekaClient与EurekaServer的交互地址，高可用状态配置对方的地址，单机状态配置自己（如果不配置则默认本机8761端口）
+      defaultZone: http://ZARD:123456@localhost:9888/eureka/
+  server:
+    eviction‐interval‐timer‐in‐ms: 80000 #EurekaServer服务注册表清理失效实例间隔（单位毫秒，默认是60*1000）#开启自我保护模式
+    enable-self-preservation: true #是否开启自我保护，默认为true开启了自我保护
+  instance:
+    #注册中心
+    hostname: ${spring.application.name}
+
+security:
+  basic:
+    #是否开启安全验证，true账户默认user,密码随机在控制台可自动打印，也可自定义账户密码；
+    #设置为false则不需要账户和密码，浏览器输入"http://localhost:9888/"可直接登陆。
+    #PS：该配置必须放在application.yml中，不允许放在bootstrap.yml中
+    enabled: true #默认true
+  user:
+    name: ZARD
+    password: 123456

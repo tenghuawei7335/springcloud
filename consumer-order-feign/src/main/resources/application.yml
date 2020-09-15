@@ -1,0 +1,19 @@
+server:
+  port:  8900
+spring:
+  application:
+    name:  consumer-order-feign
+  cloud:
+    client:
+      ip-address: 127.0.0.1
+#服务client注册到EurekaServer的地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ZARD:123456@localhost:9888/eureka/
+    fetch-registry: true #从EurekaServer上检索拉取服务,默认true,所以也可不配置该项
+  instance:
+    #如果只配置eureka.instance.prefer-ip-address=true，而不配置eureka.instance.instance-id那还是显示主机名。
+    #但ip地址是可以访问得了。
+    prefer-ip-address: true #默认为false,作用是在EurekaServer UI注册的EurekaClient显示ip,而不是电脑名。
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}

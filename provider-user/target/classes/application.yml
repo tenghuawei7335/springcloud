@@ -1,0 +1,18 @@
+server:
+  port:  7900 #程序启动Tomcat端口，可自定义
+spring:
+  application:
+    name:  provider-user
+  cloud:
+    client:
+      ip-address: 127.0.0.1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ZARD:123456@localhost:9888/eureka/
+    fetch-registry: true #从EurekaServer上检索发现拉取服务
+  instance:
+    #如果只配置eureka.instance.prefer-ip-address=true，而不配置eureka.instance.instance-id那还是显示主机名。
+    #但ip地址是可以访问得了。
+    prefer-ip-address: true #默认为false,作用是在EurekaServer UI注册的EurekaClient显示ip,而不是电脑名。
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}

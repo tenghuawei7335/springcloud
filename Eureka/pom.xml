@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.tenghw</groupId>
+    <artifactId>springcloud1</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <groupId>com.tenghw</groupId>
+  <artifactId>Eureka</artifactId>
+  <version>1.0</version>
+  <name>Eureka</name>
+  <url>http://www.example.com</url>
+
+<dependencies>
+  <!-- 注册中心Eureka-server依赖 -->
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    <version>1.4.3.RELEASE</version>
+  </dependency>
+
+  <!-- 注册中心Eureka-server安全依赖，注意：只要加入了security包则自动开启了默认安全认证，密码随机生成，在控制台可以看到 -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+  </dependency>
+
+</dependencies>
+</project>

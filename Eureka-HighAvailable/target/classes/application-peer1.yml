@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: EurekaServerHigh
+  profiles: peer1 #指定profiles=peer1
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: peer1 #hosts指定了127.0.0.1=peer1,所以这里hoaname=127.0.0.1。目的是一台电脑模拟出EurekaServer集群。
+  client:
+    #EurekaServer-peer1开启将自己注册到注册中心和拉取注册中心服务列表功能，这里的注册中心相当于peer2,peer3
+    # peer1虽是注册中心，但同时也是peer2,peer3注册中心的Client。同理，peer2也是peer1和peer3的Client。
+    fetch-registry: true #默认true,可不配置
+    register-with-eureka: true #默认true,可不配置
+    service-url: #peer1向哪几台注册中心注册自己，配置目标注册中心地址
+      defaultZone: http://user:123@peer2:8762/eureka/,http://user:123@peer3:8763/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123
+

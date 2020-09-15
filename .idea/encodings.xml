@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Eureka-HighAvailable" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order-feign-custom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order-ribbon-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-user1a" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-usera" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-usera1b" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

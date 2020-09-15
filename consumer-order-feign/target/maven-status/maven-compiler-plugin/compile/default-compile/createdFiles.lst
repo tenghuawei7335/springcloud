@@ -1,0 +1,4 @@
+com\tenghw\FeignApp.class
+com\tenghw\pojo1\User.class
+com\tenghw\controller\OrderController.class
+com\tenghw\dao\IFeign.class
